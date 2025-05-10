@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>支払い完了 - SL.AI Team Base</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    :root {
+      --primary: #4A6FFF;
+      --secondary: #F5F7FF;
+      --success: #28a745;
+      --dark: #333;
+      --light: #fff;
+      --gray: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--light);
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .complete-section {
+      padding: 4rem 0;
+      min-height: calc(100vh - 180px);
+      display: flex;
+      align-items: center;
+    }
+
+    .complete-container {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .complete-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--success);
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .complete-icon svg {
+      width: 40px;
+      height: 40px;
+      fill: var(--light);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--gray);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--light);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: var(--light);
+      padding: 1rem 0;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .complete-container {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="logo">SL.AI Team Base</a>
+    </div>
+  </header>
+
+  <section class="complete-section">
+    <div class="container">
+      <div class="complete-container">
+        <div class="complete-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+          </svg>
+        </div>
+        <h1>支払い完了</h1>
+        <p>ご登録ありがとうございます。<br>続いてチーム設定を行いましょう。</p>
+        <a href="onboarding.html" class="btn">チーム設定を始める</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 SL.AI Team Base. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // セッションストレージのデータを確認
+    const signupData = sessionStorage.getItem('signupData');
+    const selectedPlan = sessionStorage.getItem('selectedPlan');
+    const paymentData = sessionStorage.getItem('paymentData');
+
+    // 必要なデータが存在しない場合はサインアップページにリダイレクト
+    if (!signupData || !selectedPlan || !paymentData) {
+      window.location.href = 'signup.html';
+    }
+
+    // 5秒後に自動的にオンボーディングページへ遷移
+    setTimeout(() => {
+      window.location.href = 'onboarding.html';
+    }, 5000);
+  </script>
+</body>
+</html> 
